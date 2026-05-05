@@ -6,6 +6,17 @@ A set of autonomous firefighter agents operate in a 2D grid environment where fi
 Each firefighter makes decisions locally—using limited perception, bounded-range radio communication, and internal state (water level, behavioral mode, and nearby fire).
 Together, they produce emergent global containment behavior without any centralized controller.
 
+**Tech Stack:** Python · Repast4Py · NumPy · Matplotlib
+
+## My Contribution
+This was a 2-person project for CSCE 475 (Multi-Agent Systems) at the University of Nebraska–Lincoln, completed with a partner. 
+I designed and ran **Experiments 3 and 4**, which studied how individual perception radius and team size affect global containment behavior:
+
+- **Experiment 3 — Perception Radius:** swept perception radius across 6 levels (2, 3, 4, 6, 8, 10 cells) over 50 trials each to test for diminishing returns past 6 cells.
+- **Experiment 4 — Team Size:** varied the number of firefighter agents to find the optimal balance between coverage and congestion-driven interference.
+
+I also contributed to the shared agent design, communication system, and core simulation framework alongside my partner.
+
 ## Running the Simulation
 1. Install Repast4Py
 ```bash
@@ -48,8 +59,8 @@ Each firefighter behaves autonomously using only local info
 #### Local Perception
 - Detects burning cells within radius perception_r.
 #### Local Communication
-- Periodacally broadcasts local fire coordinates to a shared radio board
-- Only recieves messages within comm_r
+- Periodically broadcasts local fire coordinates to a shared radio board
+- Only receives messages within comm_r
 #### Internal State
 - water supply and max_water capacity
 - Must visit border to refill
@@ -85,5 +96,5 @@ output/snapshots
 ```
 
 ## Configuration (params.yaml)
-All high-level controls are in params.yaml. These include the params we will be changing for our expirements.
+All high-level controls are in params.yaml. These include the params we will be changing for our experiments.
 
